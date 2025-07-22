@@ -1,0 +1,39 @@
+/* Light Theme */
+[data-theme="light"] {
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
+  --secondary-color: #6b7280;
+  --secondary-hover: #4b5563;
+  --bg-color: #f9fafb;
+  --card-bg: #ffffff;
+  --text-color: #111827;
+  --text-secondary: #6b7280;
+  --border-color: #e5e7eb;
+  --input-bg: #ffffff;
+  --filter-bg: #e5e7eb;
+  --error-bg: #fee2e2;
+  --error-text: #b91c1c;
+  --success-bg: #dcfce7;
+  --success-text: #166534;
+  --due-date-color: #d97706;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --primary-color: #6366f1;
+  --primary-hover: #818cf8;
+  --secondary-color: #6b7280;
+  --secondary-hover: #9ca3af;
+  --bg-color: #111827;
+  --card-bg: #1f2937;
+  --text-color: #f9fafb;
+  --text-secondary: #9ca3af;
+  --border-color: #374151;
+  --input-bg: #1f2937;
+  --filter-bg: #374151;
+  --error-bg: #7f1d1d;
+  --error-text: #fecaca;
+  --success-bg: #14532d;
+  --success-text: #bbf7d0;
+  --due-date-color: #f59e0b;
+}
