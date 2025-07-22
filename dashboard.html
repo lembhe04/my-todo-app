@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App - Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Todo App</h1>
+      <div class="header-actions">
+        <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button id="logout-btn" class="btn btn-secondary">Logout</button>
+      </div>
+    </header>
+
+    <main class="dashboard">
+      <div class="dashboard-controls">
+        <form id="task-form" class="task-form">
+          <div class="form-group">
+            <input type="text" id="task-title" placeholder="Add a new task..." required>
+          </div>
+          <div class="form-group">
+            <textarea id="task-description" placeholder="Description (optional)"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="task-due-date">Due Date</label>
+            <input type="datetime-local" id="task-due-date">
+          </div>
+          <button type="submit" class="btn btn-primary">Add Task</button>
+        </form>
+
+        <div class="task-filters">
+          <div class="filter-group">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="pending">Pending</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+          </div>
+          <div class="sort-group">
+            <label for="sort-select">Sort by:</label>
+            <select id="sort-select">
+              <option value="created_at-desc">Newest First</option>
+              <option value="created_at-asc">Oldest First</option>
+              <option value="due_date-asc">Due Date (Asc)</option>
+              <option value="due_date-desc">Due Date (Desc)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div id="tasks-container" class="tasks-container">
+        <!-- Tasks will be rendered here -->
+      </div>
+    </main>
+  </div>
+
+  <template id="task-template">
+    <div class="task-card" data-task-id="">
+      <div class="task-checkbox">
+        <input type="checkbox" class="task-status">
+      </div>
+      <div class="task-content">
+        <h3 class="task-title"></h3>
+        <p class="task-description"></p>
+        <div class="task-meta">
+          <span class="task-due-date"></span>
+          <span class="task-created-at"></span>
+        </div>
+      </div>
+      <div class="task-actions">
+        <button class="btn-icon task-edit" aria-label="Edit task">
+          <i class="fas fa-edit"></i>
+        </button>
+        <button class="btn-icon task-delete" aria-label="Delete task">
+          <i class="fas fa-trash"></i>
+        </button>
+      </div>
+    </div>
+  </template>
+
+  <script type="module" src="js/supabase.js"></script>
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/tasks.js"></script>
+  <script type="module" src="js/theme.js"></script>
+</body>
+</html>
